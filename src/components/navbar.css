@@ -1,0 +1,106 @@
+
+
+/* Navbar container */
+.navbar {
+  background-color: #333 !important;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Logo styling */
+.logo {
+  position: absolute;
+  left: 20px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation menu */
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+
+/* Navigation links */
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Blue Wave underline effect */
+.nav-item a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #007bff 30%, transparent 70%);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-item a:hover::after,
+.nav-item a.active::after {
+  transform: scaleX(1);
+}
+
+/* Active link */
+.nav-item a.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Responsive Navbar */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+}
+
+
+
+
+ 
